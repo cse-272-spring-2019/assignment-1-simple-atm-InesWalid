@@ -8,7 +8,7 @@ public class UserAccount implements ATM
     private String cardNumber;
 
     ArrayList<Transaction> history=new ArrayList<Transaction>();
-    private int historyIndex;
+    private int histIndex;
     public UserAccount(double balance, String CardNo) {
         this.balance = balance;
         this.cardNumber = CardNo;
@@ -18,12 +18,13 @@ public class UserAccount implements ATM
         return balance;
     }
 
-    public void setBalanc(double balanc) {
-        this.balance = balanc;
+    public void setBalance(double balance1) {
+        this.balance = balance1 ;
     }
 
     public String getCardNo() {
         return cardNumber;
+        
     }
 
     public void setCardNo(String CardNo) {
@@ -31,7 +32,7 @@ public class UserAccount implements ATM
     }
 
     @Override
-    public String getCurrentBalanc() {
+    public String getCurrentBalance() {
         return balance + "";
     }
 
@@ -41,7 +42,7 @@ public class UserAccount implements ATM
         balance = balance - am;
         Transaction t = new Transaction ("withdraw",am);
         history.add(t);
-        historyIndex = history.size() -1 ;
+        histIndex = history.size() -1 ;
      
     }
 
@@ -51,18 +52,18 @@ public class UserAccount implements ATM
         balance = balance + am;
         Transaction t = new Transaction ("withdraw",am);
         history.add(t);
-        historyIndex = history.size() -1 ;
+        histIndex = history.size() -1 ;
      
     }
 
     @Override
-    public String prev() {
+    public String previous() {
     	 
-		if (historyIndex < 0) {
+		if (histIndex < 0) {
               return "no transactions";
           } else {
-              Transaction t = history.get(historyIndex);
-              historyIndex--;
+              Transaction t = history.get(histIndex);
+              histIndex--;
               return t.getType() + " " + t.getAmount();
           }
 
@@ -70,11 +71,11 @@ public class UserAccount implements ATM
 
     @Override
     public String next() {
-        historyIndex++;
-        if (historyIndex > history.size() - 1) {
+        histIndex++;
+        if (histIndex > history.size() - 1) {
             return "no transactions";
         } else {
-            Transaction t = history.get(historyIndex);
+            Transaction t = history.get(histIndex);
 
             return t.getType() + " " + t.getAmount();
 

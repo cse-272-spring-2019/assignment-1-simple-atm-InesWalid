@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class WithdrawFrame extends JFrame {
-    JButton wthdrw = new JButton("withdraw");
-    JLabel lbl = new JLabel(" amount");
+    JButton withdraw = new JButton("withdraw");
+    JLabel label = new JLabel(" amount");
     JTextField txt = new JTextField(12);
     JButton zero = new JButton("0");
     JButton one = new JButton("1");
@@ -35,9 +35,9 @@ public class WithdrawFrame extends JFrame {
 
     
 setLayout(null);
-        lbl.setBounds(70, 30, 150, 20);
+        label.setBounds(70, 30, 150, 20);
         txt.setBounds(70, 65, 170, 20);
-        wthdrw.setBounds(80, 100, 120, 20);
+        withdraw.setBounds(80, 100, 120, 20);
         zero.setBounds(70, 200, 50, 50);
         one.setBounds(130, 200, 50, 50);
         two.setBounds(190, 200, 50, 50);
@@ -48,11 +48,11 @@ setLayout(null);
         seven.setBounds(130, 300, 50, 50);
         eight.setBounds(190, 300, 50, 50);
         nine.setBounds(130, 350, 50, 50);
-        wthdrw.setBackground(Color.red);
+        withdraw.setBackground(Color.red);
 
-        add(lbl);
+        add(label);
         add(txt);
-        add(wthdrw);
+        add(withdraw);
        
         add(one);
         add(two);
@@ -67,7 +67,7 @@ setLayout(null);
         add(p,BorderLayout.CENTER);
 
         add(q,BorderLayout.NORTH);
-        wthdrw.addActionListener(new ActionListener() {
+        withdraw.addActionListener(new ActionListener() {
             
             @Override
             public void actionPerformed(ActionEvent e) {

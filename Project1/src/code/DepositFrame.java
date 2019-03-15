@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 public class DepositFrame extends JFrame{
     JButton deposit = new JButton("Deposit");
-    JLabel lbl = new JLabel("enter amount");
+    JLabel label = new JLabel("enter amount");
     JTextField txt = new JTextField(50);
     JButton zero = new JButton("0");
     JButton one = new JButton("1");
@@ -22,12 +22,12 @@ public class DepositFrame extends JFrame{
     JButton seven = new JButton("7");
     JButton eight = new JButton("8");
     JButton nine = new JButton("9");
-    UserAccount ac;
+    UserAccount account;
 
-    public DepositFrame(UserAccount a) {
-        ac = a;
+    public DepositFrame(UserAccount account1) {
+        account = account1;
         setLayout(null);
-        lbl.setBounds(70, 30, 150, 20);
+        label.setBounds(70, 30, 150, 20);
         txt.setBounds(70, 65, 150, 20);
         deposit.setBounds(110, 100, 80, 20);
         zero.setBounds(70, 200, 50, 50);
@@ -40,9 +40,9 @@ public class DepositFrame extends JFrame{
         seven.setBounds(130, 300, 50, 50);
         eight.setBounds(190, 300, 50, 50);
         nine.setBounds(130, 350, 50, 50);
-        deposit.setBackground(Color.CYAN);
+        deposit.setBackground(Color.blue);
         add(deposit);
-        add(lbl);
+        add(label);
         add(txt);
         add(zero);
         add(one);
@@ -58,7 +58,7 @@ public class DepositFrame extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ac.deposit(txt.getText());
+                account.deposit(txt.getText());
                 setVisible(false);
             }
 

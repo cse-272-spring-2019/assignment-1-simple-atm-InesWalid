@@ -69,7 +69,7 @@ public class MainFrame  extends JFrame {
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                label.setText(ac.prev());
+                label.setText(ac.previous());
             }
         });
          next.addActionListener(new ActionListener() {
