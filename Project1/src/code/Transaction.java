@@ -1,20 +1,20 @@
 package code;
 
 public class Transaction {
-	private String type;
+	private String transtype;
     private double amount;
 
     public Transaction(String gender, double amount) {
-        this.type = gender;
+        this.transtype = gender;
         this.amount = amount;
     }
 
     public String getType() {
-        return type;
+        return transtype;
     }
 
     public void setGender(String gender) {
-        this.type = gender;
+        this.transtype = gender;
     }
 
     public double getAmount() {
